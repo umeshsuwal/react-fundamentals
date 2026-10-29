@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Umesh Suwal",
+    "email": "umesh@example.com",
+    "phone": "+977-9800000001",
+    "website": "umeshsuwal.com"
+  },
+  {
+    "id": 2,
+    "name": "Lukash Napit",
+    "email": "lukash@example.com",
+    "phone": "+977-9800000002",
+    "website": "lukash.dev"
+  },
+  {
+    "id": 3,
+    "name": "Manjeet Gwaccha",
+    "email": "manjeet@example.com",
+    "phone": "+977-9800000003",
+    "website": "manjeetg.com"
+  },
+  {
+    "id": 4,
+    "name": "Akash Bhandari",
+    "email": "akash@example.com",
+    "phone": "+977-9800000004",
+    "website": "akash.io"
+  },
+  {
+    "id": 5,
+    "name": "Ashok Kumar Yadav",
+    "email": "ashok@example.com",
+    "phone": "+977-9800000005",
+    "website": "ashokyadav.com"
+  }
+]
