@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f9fafb;
+  color: #111827;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+button {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 2px;
+}
+
+/* Header */
+.topbar {
+  padding-top: 1.25rem;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+}
+.brand {
+  margin: 0 0 0.75rem;
+  font-size: 1.4rem;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.nav-link {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-bottom: 3px solid transparent;
+  color: #4b5563;
+  font-weight: 600;
+  text-decoration: none;
+}
+.nav-link.active {
+  border-color: #1d4ed8;
+  color: #1d4ed8;
+}
+
+/* Page layout */
+.container {
+  max-width: 760px;
+  margin: 1.5rem auto;
+  padding: 0 1.25rem;
+}
+.container h2 {
+  margin-top: 0;
+}
+.page-intro {
+  color: #4b5563;
+}
+
+.panel,
+.card {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line, #e5e7eb);
+  border-radius: 10px;
+  background: var(--card, #fff);
+}
+.panel {
+  margin-bottom: 1rem;
+}
+.card {
+  margin-top: 1rem;
+}
+.panel h3,
+.card h3 {
+  margin-top: 0;
+}
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.counter {
+  margin-bottom: 0;
+  color: #4b5563;
+}
+
+.theme-light {
+  --bg: #fff;
+  --fg: #111827;
+  --card: #f9fafb;
+  --line: #d1d5db;
+  --tag: #dbeafe;
+}
+.theme-dark {
+  --bg: #111827;
+  --fg: #f9fafb;
+  --card: #1f2937;
+  --line: #374151;
+  --tag: #1e3a8a;
+}
+
+.themed-shell {
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--fg);
+}
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+.theme-badge {
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  background: var(--tag);
+}
+
+/* Toggle switch */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+.theme-toggle-track {
+  position: relative;
+  width: 38px;
+  height: 20px;
+  border-radius: 999px;
+  background: #9ca3af;
+}
+.theme-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+}
+[aria-pressed="true"] .theme-toggle-track {
+  background: #2563eb;
+}
+[aria-pressed="true"] .theme-toggle-thumb {
+  transform: translateX(18px);
+}

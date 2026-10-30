@@ -1,0 +1,22 @@
+.btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid #1d4ed8;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: #1d4ed8;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
