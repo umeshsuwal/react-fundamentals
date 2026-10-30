@@ -1,0 +1,214 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f9fafb;
+  color: #111827;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 2px;
+}
+
+/* Header */
+.topbar {
+  padding-top: 1.25rem;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+}
+.brand {
+  margin: 0 0 0.75rem;
+  font-size: 1.4rem;
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+}
+.nav-link {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-bottom: 3px solid transparent;
+  color: #4b5563;
+  font-weight: 600;
+  text-decoration: none;
+}
+.nav-link.active {
+  border-color: #1d4ed8;
+  color: #1d4ed8;
+}
+
+/* Page layout and docs */
+.container {
+  max-width: 760px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+.container h2 {
+  margin-top: 0;
+}
+.page-intro {
+  color: #4b5563;
+}
+.doc-block {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+}
+.doc-block h3 {
+  margin: 0 0 0.25rem;
+}
+.doc-block p {
+  margin: 0 0 0.75rem;
+  color: #4b5563;
+}
+.doc-demo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+.doc-demo > p {
+  margin: 0;
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #1d4ed8;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-primary {
+  background: #1d4ed8;
+  color: #fff;
+}
+.btn-secondary {
+  background: #fff;
+  color: #1d4ed8;
+}
+.btn:hover:not(:disabled) {
+  filter: brightness(0.92);
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Form fields */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.field label {
+  font-weight: 600;
+}
+.field input,
+.field select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #9ca3af;
+  border-radius: 8px;
+  background: #fff;
+  font: inherit;
+}
+.field [aria-invalid="true"] {
+  border-color: #b91c1c;
+}
+.field :disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+.field-error {
+  margin: 0;
+  color: #b91c1c;
+  font-size: 0.9rem;
+}
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+}
+.checkbox input {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: #1d4ed8;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+}
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  padding: 1.25rem;
+  overflow: auto;
+  border-radius: 12px;
+  background: #fff;
+}
+.modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+}
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.modal-body p {
+  margin: 0;
+}
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (min-width: 600px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  .doc-demo {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    align-items: start;
+  }
+  .btn {
+    width: auto;
+  }
+  .doc-demo .btn {
+    justify-self: start;
+  }
+  .modal {
+    padding: 1.75rem;
+  }
+  .modal-actions {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
