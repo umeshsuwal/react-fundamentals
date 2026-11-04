@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 function ProductList({ products, onSelect }) {
   const [search, setSearch] = useState('');
@@ -17,6 +17,8 @@ function ProductList({ products, onSelect }) {
   useEffect(() => {
     document.title = `Showing ${filtered.length} products`;
   }, [filtered.length]);
+
+  const handleSelect = useCallback((id) => onSelect(id), [onSelect]);
 
   return (
     <div>
@@ -39,17 +41,17 @@ function ProductList({ products, onSelect }) {
         <ProductRow
           key={p.id}
           product={p}
-          onClick={() => onSelect(p.id)}
+          onSelect={handleSelect}
         />
       ))}
     </div>
   );
 }
 
-function ProductRow({ product, onClick }) {
+function ProductRow({ product, onSelect }) {
   console.log('Rendering row', product.id);
   console.count('row renders');
-  return <div onClick={onClick}>{product.name}</div>;
+  return <div onClick={() => onSelect(product.id)}>{product.name}</div>;
 }
 
 export default ProductList;
