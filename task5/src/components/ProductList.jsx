@@ -1,23 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 function ProductList({ products, onSelect }) {
   const [search, setSearch] = useState('');
   const [sortBy, setSortBy] = useState('name');
-  const [filtered, setFiltered] = useState([]);
 
   console.count('list renders');
 
-  // This state update is intentional: stage 0 demonstrates the derived-state effect.
-  /* eslint-disable react-hooks/set-state-in-effect */
-  useEffect(() => {
+  const filtered = useMemo(() => {
     let result = products.filter((p) =>
       p.name.toLowerCase().includes(search.toLowerCase())
     );
     result = result.sort((a, b) => (a[sortBy] > b[sortBy] ? 1 : -1));
-    setFiltered(result);
-    document.title = `Showing ${result.length} products`;
+    return result;
   }, [products, search, sortBy]);
-  /* eslint-enable react-hooks/set-state-in-effect */
+
+  useEffect(() => {
+    document.title = `Showing ${filtered.length} products`;
+  }, [filtered.length]);
 
   return (
     <div>
