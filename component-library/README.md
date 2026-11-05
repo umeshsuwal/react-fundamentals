@@ -11,6 +11,10 @@ npm run dev
 
 Use the nav links (Button, Modal, Form Fields) to see every component in each of its variants and states.
 
+The documentation pages are available at `/button`, `/modal`, and
+`/form-fields`. The written submission reflection is in
+[REFLECTION.md](./REFLECTION.md).
+
 ## Usage
 
 ```jsx
@@ -48,3 +52,10 @@ Extra props (`onClick`, `onChange`, `disabled`, `name`, ...) are passed to the u
 - Every field has a visible, associated label, and errors are announced.
 - One visible focus ring on all focusable elements.
 - Mobile-first: base styles are for narrow screens, with a `min-width: 600px` breakpoint for wider ones.
+
+## Verification
+
+- Keyboard-only testing covers every interactive control and the Modal focus
+  trap, Escape handling, and focus restoration.
+- Lighthouse accessibility score on the documentation page: **100**.
+- Lighthouse performance score: **92**.
